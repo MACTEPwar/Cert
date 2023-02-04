@@ -1,0 +1,107 @@
+﻿# *.swp
+# *.*~
+# project.lock.json
+# .DS_Store
+# *.pyc
+# nupkg/
+
+# # Visual Studio Code
+# .vscode
+
+# # Rider
+# .idea
+
+# # User-specific files
+# *.suo
+# *.user
+# *.userosscache
+# *.sln.docstates
+
+# # Build results
+# [Dd]ebug/
+# [Dd]ebugPublic/
+# [Rr]elease/
+# [Rr]eleases/
+# x64/
+# x86/
+# build/
+# bld/
+# [Bb]in/
+# [Oo]bj/
+# [Oo]ut/
+# msbuild.log
+# msbuild.err
+# msbuild.wrn
+
+# EasyTenderAPI/[Oo]bj/
+# EasyTender.DAL/[Oo]bj/
+
+# /EasyTender.BLL/[Oo]bj/
+# /EasyTender.BLL/[Oo]bj/*
+# /EasyTender.BLL/[Oo]bj
+# EasyTender.BLL/[Oo]bj/
+# EasyTender.BLL/[Oo]bj/*
+# EasyTender.BLL/[Oo]bj
+
+
+
+# # Visual Studio 2015
+# .vs/
+# /.vs
+
+
+# # .vs/EasyTenderAPI/DesignTimeBuild/.dtbcache.v2
+# # .vs/EasyTenderAPI/v16/.suo
+# # EasyTender.BLL/obj/EasyTender.BLL.csproj.nuget.dgspec.json
+# # EasyTender.BLL/obj/EasyTender.BLL.csproj.nuget.g.props
+# # EasyTender.BLL/obj/project.assets.json
+# # EasyTender.BLL/obj/project.nuget.cache
+# # EasyTender.BLL/obj/Debug/netcoreapp3.1/EasyTender.BLL.assets.cache
+# # EasyTender.BLL/obj/Debug/netcoreapp3.1/EasyTender.BLL.csproj.AssemblyReference.cache
+# # EasyTender.BLL/obj/Debug/netcoreapp3.1/EasyTender.BLL.GeneratedMSBuildEditorConfig.editorconfig
+# EasyTender.BLL/obj/EasyTender.BLL.csproj.nuget.dgspec.json
+
+#EasyTenderAPI/[Oo]bj/
+# Autosave files
+*~
+
+# build
+[Oo]bj/
+[Bb]in/
+packages/
+TestResults/
+# globs
+Makefile.in
+*.DS_Store
+*.sln.cache
+*.suo
+*.cache
+*.pidb
+*.userprefs
+*.usertasks
+config.log
+config.make
+config.status
+aclocal.m4
+install-sh
+autom4te.cache/
+*.user
+*.tar.gz
+tarballs/
+test-results/
+Thumbs.db
+# Mac bundle stuff
+*.dmg
+*.app
+# resharper
+*_Resharper.*
+*.Resharper
+# dotCover
+*.dotCover
+node_modules/
+.idea/
+appsettings.Development.json
+*.vs
+
+Library
+Library/*
