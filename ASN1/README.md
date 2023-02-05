@@ -1,0 +1,1 @@
+﻿Вместо класса GMP -> использую System.Numeric.BigInteger

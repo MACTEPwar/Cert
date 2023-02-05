@@ -52,7 +52,8 @@ namespace Cert.Controllers
                 }
             }
 
-            var key = _keyService.Read(encryptedData, password);
+            //var key = _keyService.Read(encryptedData, password);
+            _keyService.Read();
 
             return Ok();
         }
