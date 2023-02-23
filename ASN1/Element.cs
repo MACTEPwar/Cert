@@ -12,7 +12,7 @@ using ASN1.Feature;
 
 namespace ASN1
 {
-    public abstract class Element : ElementBase
+    public abstract class Element : IElementBase
     {
         protected const int TYPE_EOC = 0x00;
         protected const int TYPE_BOOLEAN = 0x01;
@@ -75,6 +75,45 @@ namespace ASN1
             {TYPE_BMP_STRING, typeof(Primitive.BMPString).FullName},
         };
 
+        const int TYPE_STRING = -1;
+        const int TYPE_TIME = -2;
+        const int TYPE_CONSTRUCTED_STRING = -3;
+
+        public static readonly Dictionary<int, string> MAP_TYPE_TO_NAME = new Dictionary<int, string> {
+            {TYPE_EOC, "EOC" },
+            {TYPE_BOOLEAN, "BOOLEAN" },
+            {TYPE_INTEGER, "INTEGER" },
+            {TYPE_BIT_STRING, "BIT STRING" },
+            {TYPE_OCTET_STRING, "OCTET STRING" },
+            {TYPE_NULL, "NULL" },
+            {TYPE_OBJECT_IDENTIFIER, "OBJECT IDENTIFIER" },
+            {TYPE_OBJECT_DESCRIPTOR, "ObjectDescriptor" },
+            {TYPE_EXTERNAL, "EXTERNAL" },
+            {TYPE_REAL, "REAL" },
+            {TYPE_ENUMERATED, "ENUMERATED" },
+            {TYPE_EMBEDDED_PDV, "EMBEDDED PDV" },
+            {TYPE_UTF8_STRING, "UTF8String" },
+            {TYPE_RELATIVE_OID, "RELATIVE-OID" },
+            {TYPE_SEQUENCE, "SEQUENCE" },
+            {TYPE_SET, "SET" },
+            {TYPE_NUMERIC_STRING, "NumericString" },
+            {TYPE_PRINTABLE_STRING, "PrintableString" },
+            {TYPE_T61_STRING, "T61String" },
+            {TYPE_VIDEOTEX_STRING, "VideotexString" },
+            {TYPE_IA5_STRING, "IA5String" },
+            {TYPE_UTC_TIME, "UTCTime" },
+            {TYPE_GENERALIZED_TIME, "GeneralizedTime" },
+            {TYPE_GRAPHIC_STRING, "GraphicString" },
+            {TYPE_VISIBLE_STRING, "VisibleString" },
+            {TYPE_GENERAL_STRING, "GeneralString" },
+            {TYPE_UNIVERSAL_STRING, "UniversalString" },
+            {TYPE_CHARACTER_STRING, "CHARACTER STRING" },
+            {TYPE_BMP_STRING, "BMPString" },
+            {TYPE_STRING, "Any String" },
+            {TYPE_TIME, "Any Time" },
+            {TYPE_CONSTRUCTED_STRING, "Constructed String" },
+        };
+
         protected int typeTag;
 
         static void FromDER(string data, int? offset = null)
@@ -106,6 +145,8 @@ namespace ASN1
             //}
             //return $element;
         }
+
+        protected abstract string EncodedContentDER();
 
         // 381
         protected static string DetermineImplClass(Identifier identifier)
@@ -146,6 +187,15 @@ namespace ASN1
                 //}
             }
             //return self::MAP_TAG_TO_CLASS[$tag];
+            return MAP_TAG_TO_CLASS[tag];
+        }
+
+        public static string TagToName(int tag)
+        {
+            if (!MAP_TYPE_TO_NAME.ContainsKey(tag))
+            {
+                return "TAG " + tag;
+            }
             return MAP_TAG_TO_CLASS[tag];
         }
 

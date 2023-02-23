@@ -20,7 +20,7 @@ namespace ASN1.Type.Primitive
             return string.Empty;
         }
 
-        protected static ElementBase DecodeFromDER(Identifier identifier, string data, ref int? offset)
+        protected static IElementBase DecodeFromDER(Identifier identifier, string data, ref int? offset)
         {
             int? idx = offset;
             if (!identifier.IsPrimitive())

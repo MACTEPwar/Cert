@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ASN1.Type
 {
-    public class UnspecifiedType: IElementBase
+    public interface IStringType : IElementBase, IStringable
     {
     }
 }

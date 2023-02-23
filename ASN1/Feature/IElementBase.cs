@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace ASN1.Feature
 {
-    public interface ElementBase
+    public interface IElementBase
     {
         public int TypeClass();
         public bool IsConstructed();
         public int Tag();
         public bool IsType(int tag);
-        public ElementBase ExpectType(int tag);
+        public IElementBase ExpectType(int tag);
         public bool IsTagged();
         public TaggedType ExpectTagged(int? tag = null);
         public Element AsElement();

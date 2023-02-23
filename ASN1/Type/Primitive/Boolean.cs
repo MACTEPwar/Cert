@@ -22,7 +22,7 @@ namespace ASN1.Type.Primitive
 
         protected string EncodedContentDER() => _bool ? "\xff" : "\x00";
 
-        protected static ElementBase DecodeFromDER(Identifier identifier, string data, ref int? offset)
+        protected static IElementBase DecodeFromDER(Identifier identifier, string data, ref int? offset)
         {
             int? idx = offset;
             int? expected = 1;
