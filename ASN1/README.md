@@ -1,1 +1,1 @@
-﻿Вместо класса GMP -> использую System.Numeric.BigInteger
+﻿Вместо класса GMP -> использую System.Numerics.BigInteger

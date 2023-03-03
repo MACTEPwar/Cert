@@ -48,9 +48,9 @@ namespace ASN1
         {
             {TYPE_EOC, typeof(Type.Primitive.EOC).FullName!},
             {TYPE_BOOLEAN, typeof(Type.Primitive.Boolean).FullName!},
-            {TYPE_INTEGER, typeof(Primitive.Integer).FullName},
-            {TYPE_BIT_STRING, typeof(Primitive.BitString).FullName},
-            {TYPE_OCTET_STRING, typeof(Primitive.OctetString).FullName},
+            {TYPE_INTEGER, typeof(Type.Primitive.Integer).FullName!},
+            {TYPE_BIT_STRING, typeof(Type.Primitive.BitString).FullName!},
+            {TYPE_OCTET_STRING, typeof(Type.Primitive.OctetString).FullName!},
             {TYPE_NULL, typeof(Primitive.NullType).FullName},
             {TYPE_OBJECT_IDENTIFIER, typeof(Primitive.ObjectIdentifier).FullName},
             {TYPE_OBJECT_DESCRIPTOR, typeof(Primitive.ObjectDescriptor).FullName},

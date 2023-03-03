@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ASN1.Type
 {
-    abstract class BaseString : Element, IStringType
+    public abstract class BaseString : Element, IStringType
     {
         protected string Str { get; set; }
 

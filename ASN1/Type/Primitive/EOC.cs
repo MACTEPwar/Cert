@@ -15,7 +15,7 @@ namespace ASN1.Type.Primitive
             typeTag = TYPE_EOC;
         }
 
-        protected string EncodedContentDER()
+        override protected string EncodedContentDER()
         {
             return string.Empty;
         }
