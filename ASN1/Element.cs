@@ -51,7 +51,7 @@ namespace ASN1
             {TYPE_INTEGER, typeof(Type.Primitive.Integer).FullName!},
             {TYPE_BIT_STRING, typeof(Type.Primitive.BitString).FullName!},
             {TYPE_OCTET_STRING, typeof(Type.Primitive.OctetString).FullName!},
-            {TYPE_NULL, typeof(Primitive.NullType).FullName},
+            {TYPE_NULL, typeof(Type.Primitive.NullType).FullName!},
             {TYPE_OBJECT_IDENTIFIER, typeof(Primitive.ObjectIdentifier).FullName},
             {TYPE_OBJECT_DESCRIPTOR, typeof(Primitive.ObjectDescriptor).FullName},
             {TYPE_REAL, typeof(Primitive.Real).FullName},
