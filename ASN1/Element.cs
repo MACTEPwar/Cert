@@ -53,7 +53,7 @@ namespace ASN1
             {TYPE_OCTET_STRING, typeof(Type.Primitive.OctetString).FullName!},
             {TYPE_NULL, typeof(Type.Primitive.NullType).FullName!},
             {TYPE_OBJECT_IDENTIFIER, typeof(Type.Primitive.ObjectIdentifier).FullName!},
-            {TYPE_OBJECT_DESCRIPTOR, typeof(Primitive.ObjectDescriptor).FullName},
+            {TYPE_OBJECT_DESCRIPTOR, typeof(Type.Primitive.ObjectDescriptor).FullName!},
             {TYPE_REAL, typeof(Primitive.Real).FullName},
             {TYPE_ENUMERATED, typeof(Primitive.Enumerated).FullName},
             {TYPE_UTF8_STRING, typeof(Primitive.UTF8String).FullName},
