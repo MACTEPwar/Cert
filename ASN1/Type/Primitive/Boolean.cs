@@ -20,7 +20,7 @@ namespace ASN1.Type.Primitive
 
         public bool Value() => _bool;
 
-        protected string EncodedContentDER() => _bool ? "\xff" : "\x00";
+        protected override string EncodedContentDER() => _bool ? "\xff" : "\x00";
 
         protected static IElementBase DecodeFromDER(Identifier identifier, string data, ref int? offset)
         {
