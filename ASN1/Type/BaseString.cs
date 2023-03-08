@@ -21,6 +21,6 @@ namespace ASN1.Type
         public override string ToString() => String();
         public string String() => this.Str;
 
-        protected bool ValidateString(string str) => true;
+        protected virtual bool ValidateString(string str) => true;
     }
 }
