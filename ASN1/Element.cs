@@ -55,7 +55,7 @@ namespace ASN1
             {TYPE_OBJECT_IDENTIFIER, typeof(Type.Primitive.ObjectIdentifier).FullName!},
             {TYPE_OBJECT_DESCRIPTOR, typeof(Type.Primitive.ObjectDescriptor).FullName!},
             {TYPE_REAL, typeof(Type.Primitive.Real).FullName!},
-            {TYPE_ENUMERATED, typeof(Primitive.Enumerated).FullName},
+            {TYPE_ENUMERATED, typeof(Type.Primitive.Enumerated).FullName!},
             {TYPE_UTF8_STRING, typeof(Primitive.UTF8String).FullName},
             {TYPE_RELATIVE_OID, typeof(Primitive.RelativeOID).FullName},
             {TYPE_SEQUENCE, typeof(Constructed.Sequence).FullName},
