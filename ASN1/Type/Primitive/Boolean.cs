@@ -14,7 +14,7 @@ namespace ASN1.Type.Primitive
 
         public Boolean(bool boolean)
         {
-            typeTag = TYPE_BOOLEAN;
+            _typeTag = TYPE_BOOLEAN;
             _bool = boolean;
         }
 

@@ -13,7 +13,7 @@ namespace ASN1.Type.Primitive
     {
         public NullType()
         {
-            typeTag = TYPE_NULL;
+            _typeTag = TYPE_NULL;
         }
 
         override protected string EncodedContentDER() => string.Empty;

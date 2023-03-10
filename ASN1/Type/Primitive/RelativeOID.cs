@@ -14,7 +14,7 @@ namespace ASN1.Type.Primitive
         {
             _oid = oid;
             _subids = ExplodeDottedOID(oid);
-            typeTag = TYPE_RELATIVE_OID;
+            _typeTag = TYPE_RELATIVE_OID;
         }
 
         override protected string EncodedContentDER()

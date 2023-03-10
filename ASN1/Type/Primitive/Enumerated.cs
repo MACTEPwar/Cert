@@ -4,12 +4,12 @@
     {
         public Enumerated(int number): base(number)
         {
-            typeTag = TYPE_ENUMERATED;
+            _typeTag = TYPE_ENUMERATED;
         }
 
         public Enumerated(string number) : base(number)
         {
-            typeTag = TYPE_ENUMERATED;
+            _typeTag = TYPE_ENUMERATED;
         }
     }
 }

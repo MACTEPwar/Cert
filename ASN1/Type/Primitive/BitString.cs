@@ -13,7 +13,7 @@ namespace ASN1.Type.Primitive
         protected int _unusedBits;
         public BitString(string str, int unusedBits = 0) : base(str)
         {
-            typeTag = TYPE_BIT_STRING;
+            _typeTag = TYPE_BIT_STRING;
             _unusedBits = unusedBits;
         }
 

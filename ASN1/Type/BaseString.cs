@@ -14,7 +14,7 @@ namespace ASN1.Type
         {
             if (!ValidateString(str))
             {
-                throw new Exception($"Not a valid %s string. {TagToName(typeTag)}");
+                throw new Exception($"Not a valid %s string. {TagToName(_typeTag)}");
             }
             Str = str;
         }

@@ -12,6 +12,10 @@ namespace ASN1.Component
         public const int CLASS_CONTEXT_SPECIFIC = 0b10;
         public const int CLASS_PRIVATE = 0b11;
 
+        // P/C enumerations
+        const int PRIMITIVE = 0b0;
+        const int CONSTRUCTED = 0b1;
+
         public Identifier(int cla, int pc, System.Numerics.BigInteger tag)
         {
             _cla = _cla & 0b11;
@@ -80,5 +84,7 @@ namespace ASN1.Component
             }
             return tag;
         }
+
+        public bool IsConstructed() => CONSTRUCTED == _pc;
     }
 }

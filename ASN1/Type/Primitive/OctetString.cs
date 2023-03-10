@@ -10,7 +10,7 @@ namespace ASN1.Type.Primitive
     {
         public OctetString(string str): base(str)
         {
-            typeTag = TYPE_OCTET_STRING;
+            _typeTag = TYPE_OCTET_STRING;
         }
     }
 }

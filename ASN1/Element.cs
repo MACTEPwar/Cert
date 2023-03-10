@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using ASN1.Type;
 using ASN1.Feature;
+using ASN1.Type.Constructed;
 
 namespace ASN1
 {
@@ -114,7 +115,7 @@ namespace ASN1
             {TYPE_CONSTRUCTED_STRING, "Constructed String" },
         };
 
-        protected int typeTag;
+        protected int _typeTag;
 
         static void FromDER(string data, int? offset = null)
         {
@@ -147,6 +148,8 @@ namespace ASN1
         }
 
         protected abstract string EncodedContentDER();
+
+        public bool IsTagged() => this is TaggedType;
 
         // 381
         protected static string DetermineImplClass(Identifier identifier)
@@ -190,6 +193,21 @@ namespace ASN1
             return MAP_TAG_TO_CLASS[tag];
         }
 
+        public bool IsType(int tag)
+        {
+            // if element is context specific
+            if (Identifier.CLASS_CONTEXT_SPECIFIC == TypeClass())
+            {
+                return false;
+            }
+            // negative tags identify an abstract pseudotype
+            if (tag < 0)
+            {
+                return IsPseudoType(tag);
+            }
+            return IsConcreteType(tag);
+        }
+
         public static string TagToName(int tag)
         {
             if (!MAP_TYPE_TO_NAME.ContainsKey(tag))
@@ -197,6 +215,61 @@ namespace ASN1
                 return "TAG " + tag;
             }
             return MAP_TAG_TO_CLASS[tag];
+        }
+
+        public abstract int TypeClass();
+
+        public abstract bool IsConstructed();
+
+        public int Tag() => _typeTag;
+
+        /// <summary>
+        /// Check whether the element is a concrete type of a given tag.
+        /// </summary>
+        /// <param name="tag"></param>
+        /// <returns></returns>
+        private bool IsConcreteType<T>(int tag)
+        {
+            // if tag doesn't match
+            if (Tag() != tag)
+            {
+                return false;
+            }
+            // if type is universal check that instance is of a correct class
+            if (Identifier.CLASS_UNIVERSAL == TypeClass())
+            {
+                var cls = DetermineUniversalImplClass(tag);
+                if (typeof(T).FullName != cls)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Check whether the element is a pseudotype.
+        /// </summary>
+        /// <param name="tag"></param>
+        /// <returns></returns>
+        private bool IsPseudoType(int tag)
+        {
+            switch (tag)
+            {
+                case TYPE_STRING:
+                    {
+                        return this is IStringType;
+                    }
+                case TYPE_TIME:
+                    {
+                        return this is ITypeTime;
+                    }
+                    case TYPE_CONSTRUCTED_STRING:
+                    {
+                        return this is ConstructedString;
+                    }
+            }
+            return false;
         }
 
     }

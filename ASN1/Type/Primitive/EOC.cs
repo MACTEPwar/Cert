@@ -12,7 +12,7 @@ namespace ASN1.Type.Primitive
     {
         public EOC()
         {
-            typeTag = TYPE_EOC;
+            _typeTag = TYPE_EOC;
         }
 
         override protected string EncodedContentDER()

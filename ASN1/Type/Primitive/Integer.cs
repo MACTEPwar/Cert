@@ -13,7 +13,7 @@ namespace ASN1.Type.Primitive
         private Org.BouncyCastle.Math.BigInteger _number;
         public Integer(Org.BouncyCastle.Math.BigInteger number)
         {
-            typeTag = TYPE_INTEGER;
+            _typeTag = TYPE_INTEGER;
             if (!ValidateNumber(number))
             {
                 throw new Exception($"'{number}' is not a valid number.");
@@ -22,7 +22,7 @@ namespace ASN1.Type.Primitive
         }
         public Integer(int number)
         {
-            typeTag = TYPE_INTEGER;
+            _typeTag = TYPE_INTEGER;
             if (!ValidateNumber(number))
             {
                 throw new Exception($"'{number}' is not a valid number.");
@@ -32,7 +32,7 @@ namespace ASN1.Type.Primitive
 
         public Integer(string number)
         {
-            typeTag = TYPE_INTEGER;
+            _typeTag = TYPE_INTEGER;
             if (!ValidateNumber(number))
             {
                 throw new Exception($"'{number}' is not a valid number.");

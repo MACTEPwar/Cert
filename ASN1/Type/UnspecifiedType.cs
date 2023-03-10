@@ -9,5 +9,10 @@ namespace ASN1.Type
 {
     public class UnspecifiedType: IElementBase
     {
+        private Element _element;
+        public UnspecifiedType(Element el)
+        {
+            _element = el;
+        }
     }
 }

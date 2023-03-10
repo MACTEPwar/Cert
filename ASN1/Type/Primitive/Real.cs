@@ -44,7 +44,7 @@ namespace ASN1.Type.Primitive
                 throw new ArgumentException("Base must be 2 or 10.");
             }
 
-            typeTag = TYPE_REAL;
+            _typeTag = TYPE_REAL;
             _strictDer = true;
             _mantissa = new BigInt(mantissa);
             _exponent = new BigInt(exponent);

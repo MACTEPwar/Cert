@@ -11,7 +11,7 @@ namespace ASN1.Type.Primitive
         public ObjectDescriptor(string descriptor): base(descriptor)
         {
             Str = descriptor;
-            typeTag= TYPE_OBJECT_DESCRIPTOR;
+            _typeTag= TYPE_OBJECT_DESCRIPTOR;
         }
 
         public string Descriptor() => Str;

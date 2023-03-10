@@ -28,7 +28,7 @@ namespace ASN1.Type.Primitive
                     throw new Exception("Second node must be in 0..39 range for root arcs 0 and 1.");
                 }
             }
-            typeTag = TYPE_OBJECT_IDENTIFIER;
+            _typeTag = TYPE_OBJECT_IDENTIFIER;
         }
 
         public string Oid() => _oid;

@@ -9,7 +9,7 @@ namespace ASN1.Type.Primitive
     public class UTF8String : PrimitiveString
     {
         public UTF8String(string str): base(str) { 
-            typeTag = TYPE_UTF8_STRING;
+            _typeTag = TYPE_UTF8_STRING;
         }
         
         protected override bool ValidateString(string str)
