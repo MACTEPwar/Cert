@@ -31,6 +31,7 @@ namespace Cert
                 .AddScoped<KeyService>();
 
             services.AddSwaggerGen();
+            services.AddNodeServices(opt => { opt.LaunchWithDebugging = true; });
             services.AddControllers();
         }
 
